@@ -3,8 +3,8 @@ package com.example.moviesapp.features.display.presentation.viewmodels
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.moviesapp.features.display.domain.usecases.GetDeleteDatabaseTaskScheduledUsecase
-import com.example.moviesapp.features.display.domain.usecases.SetDeleteDatabaseTaskUsecase
+import com.example.moviesapp.features.display.domain.contracts.usecasescontracts.GetDeleteDatabaseTaskScheduledUsecaseContract
+import com.example.moviesapp.features.display.domain.contracts.usecasescontracts.SetDeleteDatabaseTaskUsecaseContract
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -15,8 +15,8 @@ import kotlin.coroutines.CoroutineContext
 
 @HiltViewModel
 class MainActivityViewModel @Inject constructor(
-    private val getDeleteDatabaseScheduledUsecase: GetDeleteDatabaseTaskScheduledUsecase,
-    private val setDeleteDatabaseStatusUsecase: SetDeleteDatabaseTaskUsecase
+    private val getDeleteDatabaseScheduledUsecase: GetDeleteDatabaseTaskScheduledUsecaseContract,
+    private val setDeleteDatabaseStatusUsecase: SetDeleteDatabaseTaskUsecaseContract
 ) : ViewModel(), CoroutineScope {
 
     private val isDeleteTaskScheduledLiveData = MutableLiveData<Boolean>()

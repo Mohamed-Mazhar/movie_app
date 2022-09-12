@@ -41,7 +41,6 @@ object ApiModules {
     @Provides
     fun getMovieApi(retrofit: Retrofit): MovieApi = retrofit.create(MovieApi::class.java)
 
-    @Singleton
     @Provides
     fun getMovieService(movieService: MovieService) : MovieServiceContract = movieService
 
