@@ -3,7 +3,7 @@ package com.example.moviesapp.features.display.presentation.viewmodels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.moviesapp.features.display.data.datasources.cached.GenreDataSource
-import com.example.moviesapp.features.display.domain.usecases.GetMoviesUsecase
+import com.example.moviesapp.features.display.domain.contracts.usecasescontracts.GetMoviesUsecaseContract
 import com.example.moviesapp.features.display.presentation.viewentity.GenreViewEntity
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -15,7 +15,7 @@ import kotlin.coroutines.CoroutineContext
 
 @HiltViewModel
 class HomeFragmentViewModel @Inject constructor(
-    private val getMoviesUsecase: GetMoviesUsecase
+    private val getMoviesUsecase: GetMoviesUsecaseContract
 ) : ViewModel(), CoroutineScope {
 
     private val job: Job = Job()
